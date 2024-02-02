@@ -1,0 +1,14 @@
+{% load static %}
+<nav>
+    <ul>
+      <li><a href="#" class="logo">
+        <img src="{% static 'images/projlogo.jpg' %}">
+        <span class="nav-item">Admin</span>
+      </a></li>
+      <li><a href="{% url 'dash' %}">
+        <i class="fas fa-home"></i>
+        <span class="nav-item">Item</span>
+      </a></li>
+
+    </ul>
+  </nav>

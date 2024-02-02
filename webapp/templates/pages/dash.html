@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Stig</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/dash.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+
+  <div class="container">
+    {% include 'pages/menu.html' %}
+    
+    <section class="main">
+      {% include 'pages/top_navbar.html' %}
+      {% block content %}
+
+
+  <thead>
+  <button type="submit"><a href="{% url 'add_brand' %}" class="btn btn-primary">Add Brand</a></button>
+    <table class="dash-table">
+      <tr>
+        <th>Photo</th>
+        <th>Model</th>
+        <th>Quality</th>
+        <th>Product</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+  </thead>
+      <tr>
+  <tbody>
+  {% for brand in brands %}
+        <td>{% if brand.photo %}
+                    <img src="{{ brand.photo.url }}" style="width: 70px; height:70px;">
+                {% else %}
+                    No Photo Available
+                {% endif %}</td>
+        <td>{{ brand.model }}</td>
+        <td>{{ brand.quality }}</td>
+        <td>{{ brand.product }}</td>
+        <td>{{ brand.description }}</td>
+        <td>{{ brand.price }}</td>
+        <td><a href="{% url 'update_brand' brand.id %}" class="btn btn-primary">Edit</a>&nbsp;
+            <a href="{% url 'delete_brand' brand.id %}" class="btn btn-danger">Delete</a>
+        </td>
+      </tr>
+  {% endfor %}
+</tbody>
+    </table> 
+
+
+
+      {% endblock %}
+    </section>
+  </div>
+</body>
+</html>

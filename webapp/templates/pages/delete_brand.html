@@ -1,0 +1,22 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'webapp/style.css' %}">
+    <title>Delete Brand</title>
+</head>
+<body>
+    <h1>Delete Brand</h1>
+   
+    <form method="post">
+        {% csrf_token %}
+         <p>Are you sure you want to delete "{{ brand.model }}"?</p>
+        <button type="submit">Delete</button>
+        <button class="delete-details"><a href="{% url 'dash' %}" class="delete-details1">Cancel</a></button>
+    </form>
+</body>
+</html>

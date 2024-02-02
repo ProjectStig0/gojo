@@ -1,0 +1,29 @@
+{% extends 'pages/index.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<main>
+  <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3"style = "text-align: center;"> Project Stig</h1>
+        <p id="javademo" class="lead"style = "text-align: center;">Brand New Bags Made in Vietnam</p><br><br>
+  <center><button type="button" class="btn btn-outline-primary btn-lg px-4 me-md-2"><a class="navbar-brand" href="{% url 'dash' %}">Dashboard</a></button></center><br><br>
+  <div class="col-lg-6">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </div>
+  </div>
+
+  <section id="contact">
+    <div class="container mb-5">
+        <!--Section: Contact v.2-->
+        <section class="mb-4">
+            <!--Section heading-->
+            <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+            <!--Section description-->
+            <p class="text-center w-responsive mx-auto mb-5">If you have concern about the bags quality just message our company.</p>
+        </section>
+    </div>
+  </section>
+</main>
+{% endblock %}
